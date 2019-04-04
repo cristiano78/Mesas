@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+
+    >
+
+    <Button
+
+        android:id="@+id/Legumes"
+        android:layout_width="137dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:layout_marginBottom="472dp"
+        android:text="Legumes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Canja"
+        android:layout_width="137dp"
+        android:layout_height="100dp"
+        android:layout_above="@id/textsopas"
+
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="100dp"
+        android:text="Canja" />
+
+    <Button
+        android:id="@+id/Marisco"
+        android:layout_width="137dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/CaldoVerde"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="200dp"
+        android:text="Marisco" />
+
+    <Button
+        android:id="@+id/CaldoVerde"
+        android:layout_width="137dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="100dp"
+        android:text="Caldo Verede" />
+
+    <TextView
+        android:id="@+id/textsopas"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/Marisco"
+
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <ListView
+        android:id="@+id/sopastext"
+        style="@style/Widget.AppCompat.ListView.Menu"
+        android:layout_width="395dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/textsopas"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:text="teste" />
+
+    <Button
+        android:id="@+id/confirmar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/sopastext"
+        android:layout_marginTop="-3dp"
+        android:text="Submeter" />
+
+</RelativeLayout>
