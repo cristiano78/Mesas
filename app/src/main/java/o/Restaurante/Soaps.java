@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -70,14 +71,20 @@ public class Soaps extends AppCompatActivity {
                                 list.add(names);
                                 txt.setAdapter(arrayAdapter);
                                 Realm realm = Realm.getDefaultInstance();
-                                realm.beginTransaction();
-                                Sopas sopaLegumes = new Sopas("Legumes", "xpto");
-                                Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
-                                RealmList<Sopas> listasopas = new RealmList<>();
-                                listasopas.add(sopaLegumes);
-                                mesa1.setSopas(listasopas);
-                                realm.insertOrUpdate(mesa1);
-                                realm.commitTransaction();
+                                try {
+                                    realm.beginTransaction();
+                                    Sopas sopaLegumes = new Sopas("Legumes", "xpto");
+                                    Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
+                                    RealmList<Sopas> listasopas = new RealmList<>();
+                                    listasopas.add(sopaLegumes);
+                                    mesa1.setSopas(listasopas);
+                                    realm.insertOrUpdate(mesa1);
+                                    realm.commitTransaction();
+                                } catch (Exception e) {
+                                    Log.e("ERROR",e.toString());
+                                } finally {
+                                    realm.close();
+                                }
                             }
                         });
                         button2= findViewById(R.id.CaldoVerde);

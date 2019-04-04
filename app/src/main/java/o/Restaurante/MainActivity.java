@@ -13,6 +13,7 @@ import android.support.v7.widget.AppCompatButton;
 import io.realm.Realm;
 import io.realm.RealmList;
 import o.Restaurante.realm.Mesas;
+import o.Restaurante.realm.Sopas;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
         //Inserir mesas
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        realm.insertOrUpdate(new Mesas(1, new RealmList<Soaps>()));
+        realm.insertOrUpdate(new Mesas(1, new RealmList<Sopas>()));
         realm.commitTransaction();
+        Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
+        realm.close();
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

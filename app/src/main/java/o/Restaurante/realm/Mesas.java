@@ -16,12 +16,9 @@ public class Mesas extends RealmObject {
     public Mesas() {
     }
 
-    public Mesas(int id, RealmList<Soaps> soaps) {
-    }
-
-    public Mesas(Integer id, RealmList<Sopas> sopas) {
+    public Mesas(int id, RealmList<Sopas> soapsRealmList) {
         this.id = id;
-        this.sopas = sopas;
+        this.sopas = soapsRealmList;
     }
 
     public Mesas(Integer id) {
