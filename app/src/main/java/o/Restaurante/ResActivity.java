@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class ResActivity extends AppCompatActivity {
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
+    private Button Sopasbtn;
+    private Button Pratosbtn;
+    private Button Sobremesasbtn;
+    private Button Bebidasbtn;
+    private Button FazerPedidobtn;
     private String parametro;
     public final static String VALOR = "TESTE";
     @Override
@@ -23,39 +23,49 @@ public class ResActivity extends AppCompatActivity {
         setContentView(R.layout.activity_res);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        parametro = getIntent().getExtras().getString("TESTE");
+
+        if(getIntent().getExtras()!=null){
+            parametro = getIntent().getExtras().getString("TESTE");
+        }
+
+//        try {
+//            parametro = getIntent().getExtras().getString("TESTE");
+//        } catch (Exception e) {
+//            Log.e(this.getClass().toString(), e.toString());
+//        }
 
 
 
-        button1= findViewById(R.id.Sopas);
-        button1.setOnClickListener(new View.OnClickListener() {
+        Sopasbtn= findViewById(R.id.Sopas);
+
+        Sopasbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 opensopas();
             }
         });
-        button2= findViewById(R.id.Pratos);
-        button2.setOnClickListener(new View.OnClickListener() {
+        Pratosbtn= findViewById(R.id.Pratos);
+        Pratosbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 operates();
             }
         });
-        button3= findViewById(R.id.Sobremesas);
-        button3.setOnClickListener(new View.OnClickListener() {
+        Sobremesasbtn= findViewById(R.id.Sobremesas);
+        Sobremesasbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 opensobremesas();
             }
         });
-        button4= findViewById(R.id.Bebidas);
-        button4.setOnClickListener(new View.OnClickListener() {
+        Bebidasbtn= findViewById(R.id.Bebidas);
+        Bebidasbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openbebidas();
             }
-        });button5= findViewById(R.id.FazerPedido);
-        button5.setOnClickListener(new View.OnClickListener() {
+        });FazerPedidobtn= findViewById(R.id.FazerPedido);
+        FazerPedidobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openfazerpedido();
