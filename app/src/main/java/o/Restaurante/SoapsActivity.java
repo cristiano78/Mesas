@@ -2,8 +2,6 @@ package o.Restaurante;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -15,18 +13,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
-
 import io.realm.Realm;
 import io.realm.RealmList;
 import o.Restaurante.realm.Mesas;
 import o.Restaurante.realm.Sopas;
 
-public class Soaps extends AppCompatActivity {
+
+public class SoapsActivity extends AppCompatActivity {
     Button button1;
     ArrayList<String> list;
     private Button button2;
@@ -39,8 +33,11 @@ public class Soaps extends AppCompatActivity {
     private String parametro;
     public final static String VALOR = "TESTE";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Realm.init(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sopas);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -56,7 +53,7 @@ public class Soaps extends AppCompatActivity {
 
 
 
-                       /*Códigoq que Pôe Elementos na list view e tambem para eleminar*/
+                       /*Código que Pôe Elementos na list view e tambem para eleminar*/
                         txt= findViewById(R.id.sopastext);
                         button1= findViewById(R.id.Legumes);
 
@@ -70,21 +67,8 @@ public class Soaps extends AppCompatActivity {
                                 String names=button1.getText().toString();
                                 list.add(names);
                                 txt.setAdapter(arrayAdapter);
-                                Realm realm = Realm.getDefaultInstance();
-                                try {
-                                    realm.beginTransaction();
-                                    Sopas sopaLegumes = new Sopas("Legumes", "xpto");
-                                    Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
-                                    RealmList<Sopas> listasopas = new RealmList<>();
-                                    listasopas.add(sopaLegumes);
-                                    mesa1.setSopas(listasopas);
-                                    realm.insertOrUpdate(mesa1);
-                                    realm.commitTransaction();
-                                } catch (Exception e) {
-                                    Log.e("ERROR",e.toString());
-                                } finally {
-                                    realm.close();
-                                }
+
+
                             }
                         });
                         button2= findViewById(R.id.CaldoVerde);
@@ -148,25 +132,40 @@ public class Soaps extends AppCompatActivity {
 
 
 
-                                   /*Codigo para fazer com que os elementos da list view passe para fazer pedido*/
-                                    /*button5= findViewById(R.id.confirmar);
+                             //*Codigo para fazer com que os elementos da list view passe para fazer pedido*//*
+
+                                  button5= findViewById(R.id.confirmar);
                                     button5.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
                                             openMesa5();
+                                            Realm realm = Realm.getDefaultInstance();
+                                            try {
+                                                realm.beginTransaction();
+                                                Sopas sopaLegumes = new Sopas("Legumes", "xpto");
+                                                Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
+                                                RealmList<Sopas> listasopas = new RealmList<>();
+                                                listasopas.add(sopaLegumes);
+                                                mesa1.setSopas(listasopas);
+                                                realm.insertOrUpdate(mesa1);
+                                                realm.commitTransaction();
+                                            } catch (Exception e) {
+                                                Log.e("ERROR",e.toString());
+                                            } finally {
+                                                realm.close();
+                                            }
+
                                         }
-                                    });*/
+                                    });
 
 
                                 }
-                               /* public void openMesa5() {
-                                    Intent intent = new Intent(this, FazerPedido.class);
-                                    intent.putExtra(FazerPedido.VALOR,parametro );
-                                    intent.putCharSequenceArrayListExtra(FazerPedido.List,arrayAdapter.get);
-                                    startActivity(intent);*/
+                             public void openMesa5() {
+                                 Intent intent = new Intent(this, ResActivity.class);
 
+                                 startActivity(intent);
 
-
+                             }
 
 
 

@@ -14,27 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FazerPedido"
+            android:name=".FazerPedidoActivity"
             android:label="@string/title_activity_fazer_pedido"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Bebidas"
+            android:name=".BebidasActivity"
             android:label="@string/title_activity_bebidas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Sobremesas"
+            android:name=".SobremesasActivity"
             android:label="@string/title_activity_sobremesas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Pratos"
+            android:name=".PratosActivity"
             android:label="@string/title_activity_pratos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Soaps"
+            android:name=".SoapsActivity"
             android:label="@string/title_activity_sopas"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Res"
+            android:name=".ResActivity"
             android:label="@string/title_activity_res"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

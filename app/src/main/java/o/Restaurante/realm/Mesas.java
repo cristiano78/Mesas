@@ -1,10 +1,10 @@
+
 package o.Restaurante.realm;
 
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
-import o.Restaurante.Soaps;
 
 public class Mesas extends RealmObject {
 
@@ -41,3 +41,4 @@ public class Mesas extends RealmObject {
         this.sopas = sopas;
     }
 }
+

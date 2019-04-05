@@ -2,8 +2,6 @@ package o.Restaurante;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -11,7 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class Res extends AppCompatActivity {
+public class ResActivity extends AppCompatActivity {
     private Button button1;
     private Button button2;
     private Button button3;
@@ -90,28 +88,28 @@ public class Res extends AppCompatActivity {
     }
 
     public void opensopas(){
-        Intent intent = new Intent(this, Soaps.class);
-        intent.putExtra(Soaps.VALOR,parametro);
+        Intent intent = new Intent(this, SoapsActivity.class);
+        intent.putExtra(SoapsActivity.VALOR,parametro);
         startActivity(intent);
 
     }
     public void operates(){
-        Intent intent = new Intent(this, Pratos.class);
+        Intent intent = new Intent(this, PratosActivity.class);
         startActivity(intent);
 
     }
     public void opensobremesas(){
-        Intent intent = new Intent(this, Sobremesas.class);
+        Intent intent = new Intent(this, SobremesasActivity.class);
         startActivity(intent);
 
     }
     public void openbebidas(){
-        Intent intent = new Intent(this, Bebidas.class);
+        Intent intent = new Intent(this, BebidasActivity.class);
         startActivity(intent);
 
     }
     public void openfazerpedido(){
-        Intent intent = new Intent(this, FazerPedido.class);
+        Intent intent = new Intent(this, FazerPedidoActivity.class);
         startActivity(intent);
 
     }

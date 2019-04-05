@@ -8,20 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
-public class FazerPedido extends AppCompatActivity {
-    private String parametro;
- private ArrayAdapter<String> Arrray;
-    public final static String VALOR = "TESTE";
-    public final static String List = "list";
+public class BebidasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        parametro = getIntent().getExtras().getString("TESTE");
-        parametro = getIntent().getExtras().getString("list");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fazer_pedido);
+        setContentView(R.layout.activity_bebidas);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

@@ -1,3 +1,4 @@
+
 package o.Restaurante.realm;
 
 import io.realm.RealmObject;
@@ -32,3 +33,4 @@ public class Sopas extends RealmObject {
         this.receita = receita;
     }
 }
+

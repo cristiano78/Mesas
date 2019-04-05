@@ -8,112 +8,174 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.support.v7.widget.AppCompatButton;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmList;
 import o.Restaurante.realm.Mesas;
 import o.Restaurante.realm.Sopas;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
-    private Button button6;
-    private Button button7;
-    private Button button8;
-    private Button button9;
-    private Button button10;
+    private Button M1;
+    private Button M2;
+    private Button M3;
+    private Button M4;
+    private Button M5;
+    private Button M6;
+    private Button M7;
+    private Button M8;
+    private Button M9;
+    private Button M10;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Realm.init(this);
+        RealmConfiguration config = new RealmConfiguration.Builder()
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        Realm.setDefaultConfiguration(config);
+
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        button1= findViewById(R.id.Mesa1);
-        button2= findViewById(R.id.Mesa2);
-        button3= findViewById(R.id.Mesa3);
-        button4= findViewById(R.id.Mesa4);
-        button5= findViewById(R.id.Mesa5);
-        button6= findViewById(R.id.Mesa6);
-        button7= findViewById(R.id.Mesa7);
-        button8= findViewById(R.id.Mesa8);
-        button9= findViewById(R.id.Mesa9);
-        button10= findViewById(R.id.Mesa10);
+        M1= findViewById(R.id.Mesa1);
+        M2= findViewById(R.id.Mesa2);
+        M3= findViewById(R.id.Mesa3);
+        M4= findViewById(R.id.Mesa4);
+        M5= findViewById(R.id.Mesa5);
+        M6= findViewById(R.id.Mesa6);
+        M7= findViewById(R.id.Mesa7);
+        M8= findViewById(R.id.Mesa8);
+        M9= findViewById(R.id.Mesa9);
+        M10= findViewById(R.id.Mesa10);
 
-        //Inserir mesas
-        Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-        realm.insertOrUpdate(new Mesas(1, new RealmList<Sopas>()));
-        realm.commitTransaction();
-        Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
-        realm.close();
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        M1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa1();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(1, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa1 = realm.where(Mesas.class).equalTo("id", 1).findFirst();
+                realm.close();
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        M2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa2();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(2, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa2 = realm.where(Mesas.class).equalTo("id", 2).findFirst();
+                realm.close();
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
+        M3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa3();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(3, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa3 = realm.where(Mesas.class).equalTo("id", 3).findFirst();
+                realm.close();
             }
         });
-        button4.setOnClickListener(new View.OnClickListener() {
+        M4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa4();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(4, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa4 = realm.where(Mesas.class).equalTo("id", 4).findFirst();
+                realm.close();
             }
         });
-        button5.setOnClickListener(new View.OnClickListener() {
+        M5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa5();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(5, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa5 = realm.where(Mesas.class).equalTo("id", 5).findFirst();
+                realm.close();
             }
         });
-        button6.setOnClickListener(new View.OnClickListener() {
+        M6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa6();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(6, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa6 = realm.where(Mesas.class).equalTo("id", 6).findFirst();
+                realm.close();
             }
         });
-        button7.setOnClickListener(new View.OnClickListener() {
+        M7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa7();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(7, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa7 = realm.where(Mesas.class).equalTo("id", 7).findFirst();
+                realm.close();
             }
         });
-        button8.setOnClickListener(new View.OnClickListener() {
+        M8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa8();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(8, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa8 = realm.where(Mesas.class).equalTo("id", 8).findFirst();
+                realm.close();
             }
         });
-        button9.setOnClickListener(new View.OnClickListener() {
+        M9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa9();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(9, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa9 = realm.where(Mesas.class).equalTo("id", 9).findFirst();
+                realm.close();
             }
         });
-        button10.setOnClickListener(new View.OnClickListener() {
+        M10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMesa10();
+                Realm realm = Realm.getDefaultInstance();
+                realm.beginTransaction();
+                realm.insertOrUpdate(new Mesas(10, new RealmList<Sopas>()));
+                realm.commitTransaction();
+                Mesas mesa10 = realm.where(Mesas.class).equalTo("id", 10).findFirst();
+                realm.close();
             }
         });
 
@@ -137,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
+  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -153,53 +215,53 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void openMesa1(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button1.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M1.getText());
         startActivity(intent);
     }
     public void openMesa2(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button2.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M2.getText());
         startActivity(intent);
     }
     public void openMesa3(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button3.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M3.getText());
         startActivity(intent);
     }
     public void openMesa4(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button4.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M4.getText());
         startActivity(intent);
     }
     public void openMesa5(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button5.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M5.getText());
         startActivity(intent);
     }
     public void openMesa6(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button6.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M6.getText());
         startActivity(intent);
     }
     public void openMesa7(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button7.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M7.getText());
         startActivity(intent);
     }
     public void openMesa8(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button8.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M8.getText());
         startActivity(intent);
     }
     public void openMesa9(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button9.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M9.getText());
         startActivity(intent);
     }
     public void openMesa10(){
-        Intent intent = new Intent(this, Res.class);
-        intent.putExtra(Res.VALOR,button10.getText());
+        Intent intent = new Intent(this, ResActivity.class);
+        intent.putExtra(ResActivity.VALOR,M10.getText());
         startActivity(intent);
     }
 
